@@ -26,7 +26,7 @@ public class EventResource {
     @Path("/create")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Uni<Response> createEvent(Event event) {
+    public Uni<Response> create(Event event) {
         return eventService.createEvent(event);
     }
 
@@ -34,7 +34,7 @@ public class EventResource {
     @Path("/retrieve")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Uni<List<Event>> retrieveEvents(@RestQuery("index") String index) {
+    public Uni<List<Event>> retrieveAll(@RestQuery("index") String index) {
         return eventService.retrieveEvents(index);
     }
 
@@ -42,15 +42,15 @@ public class EventResource {
     @Path("/retrieve/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Uni<Event> retrieveEventByEventId(@RestPath("id") String eventId, @RestQuery("index") String index) {
-        return eventService.retrieveEventByEventId(index, eventId);
+    public Uni<Event> retrieveBy(@RestPath("id") String eventId, @RestQuery("index") String index) {
+        return eventService.retrieveEventBy(index, eventId);
     }
 
     @PUT
     @Path("/update")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Uni<Response> retrieveIndexes(Event event) {
+    public Uni<Response> update(Event event) {
         return eventService.updateEvent(event);
     }
 
@@ -58,7 +58,7 @@ public class EventResource {
     @Path("/delete/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Uni<Response> deleteEventByEventId(@RestPath("id") String eventId, @RestQuery("index") String index) {
-        return eventService.deleteEventByEventId(index, eventId);
+    public Uni<Response> deleteBy(@RestPath("id") String eventId, @RestQuery("index") String index) {
+        return eventService.deleteEventBy(index, eventId);
     }
 }

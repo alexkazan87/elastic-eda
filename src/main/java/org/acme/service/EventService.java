@@ -50,7 +50,7 @@ public class EventService {
                 .transform(eventFactoryService::extractEventList);
     }
 
-    public Uni<Event> retrieveEventByEventId(String index, String eventId) {
+    public Uni<Event> retrieveEventBy(String index, String eventId) {
         Log.info("Retrieving event: " + eventId);
 
         SearchRequest searchRequest = elasticsearchQueryFactory.searchEventByEventIdRequest(index, eventId);
@@ -68,7 +68,7 @@ public class EventService {
                 .transform(deleteResponse -> Response.ok().build());
     }
 
-    public Uni<Response> deleteEventByEventId(String index, String eventId) {
+    public Uni<Response> deleteEventBy(String index, String eventId) {
         Log.info("Deleting event: " + eventId);
 
         DeleteRequest deleteRequest = elasticsearchQueryFactory.deleteEventByEventIdRequest(index, eventId);

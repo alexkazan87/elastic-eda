@@ -52,6 +52,19 @@ If you want to learn more about building native executables, please consult http
 - Elasticsearch Java Client ([guide](https://quarkus.io/guides/elasticsearch)): Connect to an Elasticsearch cluster using the Java client
 - SmallRye Reactive Messaging - Kafka Connector ([guide](https://quarkus.io/guides/kafka-reactive-getting-started)): Connect to Kafka with Reactive Messaging
 
+
+## TODO Solution
+- Separate Logic to different μServices
+- Add Kibana DashBoards
+- Add auth2.0
+- Add notification-consumer
+- OpenApi 3.0
+- Tests - https://microcks.io/
+- Deployment in K8s locally
+- Add gitHub actions
+
+![Model](link_here)
+
 ## Provided Code
 
 ### Reactive Messaging codestart
