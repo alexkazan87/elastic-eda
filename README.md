@@ -63,7 +63,7 @@ If you want to learn more about building native executables, please consult http
 - Deployment in K8s locally
 - Add gitHub actions
 
-![Model](link_here)
+![Model](https://github.com/alexkazan87/quarkus-elasticsearch/blob/main/docs/elkOverall.png)
 
 ## Provided Code
 
